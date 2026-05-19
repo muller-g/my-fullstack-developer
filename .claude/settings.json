@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "description": "Configurações do Claude Code para o template my-fullstack-developer",
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(echo:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(chmod:*)",
+      "Bash(touch:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(diff:*)",
+      "Bash(tree:*)",
+      "Bash(pwd:*)",
+      "Bash(which:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(php:*)",
+      "Bash(composer:*)",
+      "Bash(artisan:*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(xargs:*)",
+      "Edit(/.claude/skills/laravel-development/**)",
+      "Edit(/.claude/skills/nestjs-development/**)",
+      "Edit(/.claude/skills/react-development/**)",
+      "Edit(/.claude/skills/nextjs-development/**)",
+      "Edit(/.claude/skills/vue-development/**)",
+      "Edit(/.claude/skills/database-design/**)",
+      "Edit(/.claude/skills/api-design/**)",
+      "Edit(/.claude/skills/docker-devops/**)",
+      "Edit(/.claude/skills/security-review/**)",
+      "Edit(/.claude/skills/testing-strategy/**)",
+      "Edit(/.claude/skills/documentation-writer/**)",
+      "Edit(/.claude/skills/backend-architecture/**)",
+      "Edit(/.claude/skills/frontend-architecture/**)",
+      "Edit(/.claude/skills/node-development/**)",
+      "Edit(/.claude/skills/legacy-code-analysis/**)",
+      "Edit(/.claude/skills/deploy-production/**)",
+      "Edit(/.claude/skills/performance-optimization/**)",
+      "Edit(/.claude/skills/ai-agent-orchestration/**)",
+      "Bash(chmod +x /data/projects/Study/my-fullstack-developer/scripts/generate-docs.sh /data/projects/Study/my-fullstack-developer/scripts/validate-architecture.sh)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(sudo rm:*)",
+      "Bash(chmod 777:*)",
+      "Bash(curl * | bash:*)",
+      "Bash(wget * | bash:*)"
+    ]
+  },
+  "model": {
+    "preferred": "claude-sonnet-4-6",
+    "fallback": "claude-haiku-4-5"
+  },
+  "behavior": {
+    "language": "pt-BR",
+    "codeLanguage": "en",
+    "verbosity": "concise",
+    "planBeforeExecute": true,
+    "confirmDestructiveActions": true,
+    "autoUpdateDocs": true
+  },
+  "context": {
+    "alwaysRead": [
+      "README.md",
+      "CLAUDE.md",
+      "AGENTS.md",
+      ".claude/CLAUDE.md"
+    ],
+    "readOnDemand": [
+      "docs/architecture/overview.md",
+      "docs/conventions/",
+      ".claude/rules/"
+    ]
+  },
+  "hooks": {
+    "preToolCall": [],
+    "postToolCall": [],
+    "onError": []
+  },
+  "ui": {
+    "theme": "dark",
+    "showTokenCount": true,
+    "compactMode": false
+  }
+}
