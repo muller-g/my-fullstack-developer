@@ -70,6 +70,7 @@ Cada um tem um arquivo detalhado em `.claude/commands/`:
 - `/dockerize-project` — Dockerizar projeto
 - `/production-debug` — Debugging em produção
 - `/performance-review` — Revisão de performance
+- `/git-commit` — git add + commit com mensagem Conventional Commits + push
 
 ---
 

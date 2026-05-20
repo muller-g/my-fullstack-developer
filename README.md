@@ -102,6 +102,70 @@ my-fullstack-developer/
 
 ---
 
+## Quando vou usar em um projeto existente
+
+Se o projeto já existe e você quer plugar esse template nele, o fluxo é diferente.
+
+O agente não conhece o código — então mandar ele trabalhar direto vai gerar resultados genéricos e inconsistentes com o que já está feito.
+
+**O que você precisa copiar para o projeto existente:**
+
+```bash
+# Copie esses arquivos/pastas para a raiz do seu projeto
+.claude/          # commands, skills e rules
+CLAUDE.md         # regras de comportamento
+AGENTS.md         # guia de onboarding para agentes
+```
+
+Nada do código da aplicação é alterado. São apenas arquivos de contexto e configuração.
+
+**Depois, siga essas 3 etapas:**
+
+**Etapa 1 — Mapear o código existente**
+
+Rode o comando abaixo na raiz do projeto existente:
+
+```
+/analyze-codebase
+
+Diretório raiz: .
+Foco: geral
+Objetivo: onboarding
+```
+
+O agente vai varrer o código, identificar a stack, arquitetura, módulos e padrões já em uso, e gerar um documento em `docs/architecture/overview.md`. **Ele não altera nada** — só documenta o que encontrou.
+
+**Etapa 2 — Revisar e completar o contexto**
+
+Com a análise feita, complete ou ajuste estes arquivos para refletir o projeto real:
+
+| Arquivo | O que colocar |
+|---|---|
+| `README.md` | Descrição real do projeto |
+| `docs/product/vision.md` | O que o sistema faz e para quem |
+| `docs/architecture/overview.md` | Arquitetura real identificada |
+| `.env.example` | Todas as variáveis de ambiente necessárias |
+| `AGENTS.md` | Particularidades e contexto do seu projeto |
+
+**Etapa 3 — Usar normalmente**
+
+A partir daí, os comandos funcionam com contexto. Em cada sessão nova o agente lê os arquivos de contexto automaticamente e já sabe onde está, qual é a stack e quais padrões seguir.
+
+```
+# Criar uma nova feature
+/create-feature
+
+# Corrigir um bug
+/fix-bug
+
+# Criar um endpoint
+/create-endpoint
+```
+
+> O passo de análise é feito uma vez. Nas sessões seguintes, o agente lê a documentação gerada — não o código inteiro — o que é muito mais rápido.
+
+---
+
 ## Quando vou estudar alguma stack
 
 Eu também uso isso pra estudo.
@@ -158,6 +222,7 @@ Alguns exemplos:
 | `/dockerize-project` | Dockerização do projeto |
 | `/production-debug` | Debug em produção |
 | `/performance-review` | Revisão de performance |
+| `/git-commit` | git add + commit com mensagem Conventional Commits + push |
 
 ---
 
